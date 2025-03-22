@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Analytics & Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .chat-container {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .chat-history {
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            width: calc(100% - 22px);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hotel Booking Analytics Dashboard</h1>
+    <div class="dashboard" id="analyticsContainer">
+        <!-- Images will be injected here -->
+    </div>
+
+    <div class="chat-container">
+        <h2>Ask a Question</h2>
+        <div class="chat-history" id="chatHistory"></div>
+        <input type="text" id="chatInput" placeholder="Type your question here...">
+        <button onclick="sendChat()">Send</button>
+    </div>
+
+    <script>
+        async function fetchAnalytics() {
+            try {
+                const response = await fetch("https://d5fb-34-125-183-146.ngrok-free.app/result_analytics");
+                const data = await response.json();
+                const container = document.getElementById("analyticsContainer");
+                container.innerHTML = "";
+
+                for (const [key, imgData] of Object.entries(data)) {
+                    const card = document.createElement("div");
+                    card.classList.add("card");
+
+                    const title = document.createElement("h2");
+                    title.innerText = key.replace("_", " ");
+
+                    const image = document.createElement("img");
+                    image.src = `data:image/png;base64,${imgData}`;
+                    image.alt = key;
+
+                    card.appendChild(title);
+                    card.appendChild(image);
+                    container.appendChild(card);
+                }
+            } catch (error) {
+                console.error("Error fetching analytics:", error);
+            }
+        }
+
+        async function sendChat() {
+            const question = document.getElementById("chatInput").value;
+            if (!question.trim()) return;
+            
+            const chatHistory = document.getElementById("chatHistory");
+            chatHistory.innerHTML += `<p><strong>You:</strong> ${question}</p>`;
+            document.getElementById("chatInput").value = "";
+
+            try {
+                const response = await fetch("https://d5fb-34-125-183-146.ngrok-free.app/ask", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ "text":question })
+                });
+                const data = await response.json();
+                chatHistory.innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            } catch (error) {
+                console.error("Error sending chat:", error);
+            }
+        }
+
+        fetchAnalytics();
+    </script>
+
+</body>
+</html>
