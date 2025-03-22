@@ -1,8 +1,8 @@
 Hotel Booking Analytics with RAG-Enabled SQL Querying System
-### 📌 Overview
+# 📌 Overview
 This project is an advanced Retrieval-Augmented Generation (RAG) based Hotel Booking Analytics system that enables SQL-driven querying for insightful analysis. It integrates Generative AI with SQL-based data retrieval, allowing users to ask natural language questions and get AI-generated responses based on structured hotel booking data.
 
-### 🚀 Features
+# 🚀 Features
 Natural Language to SQL: Users can ask queries in English, and the system translates them into SQL.
 
 RAG-Powered Insights: Combines retrieved database information with context-aware generative AI responses.
@@ -21,9 +21,9 @@ Seamless JSON Responses: Ensures AI-generated answers are structured for fronten
 
 Data Visualization & Analytics: Generates key insights using Matplotlib & Seaborn.
 
-# For undertanding better about the api end points and tested examples, check the Test_Documents.pdf in th repository
+## For undertanding better about the api end points and tested examples, check the Test_Documents.pdf in th repository
 
-### 🛠️ Tech Stack
+# 🛠️ Tech Stack
 Backend: Flask, LangChain
 
 LLMs:
@@ -38,26 +38,25 @@ Data Visualization: Matplotlib, Seaborn
 
 Frontend (Planned): React.js
 
-### 📌 Setup Instructions
+# 📌 Setup Instructions
 For Windows Users
 1️⃣ Clone the Repository
 
 **`git clone https://github.com/Sayan836/Hotel-Booking-Analytics-with-RAG-Enabled-SQL-Querying-System.git`**
 **`cd Hotel-Booking-Analytics-with-RAG-Enabled-SQL-Querying-System`**
-2️⃣ Create a Virtual Environment
+### 2️⃣ Create a Virtual Environment
 
 **`virtualenv env`**
-3️⃣ Activate the Virtual Environment
+### 3️⃣ Activate the Virtual Environment
 
 **`.\env\Scripts\activate.ps1`**
 
 ### 4️⃣ Install Required Dependencies
 
 **`pip install -r requirements.txt`**
-5️⃣ Set Up Environment Variables
 
+### 5️⃣ Set Up Environment Variables
 Edit the .env file and add:
-
 **`
 GEMINI_API_KEY=your_gemini_api_key  # Get this from Google Cloud Console
 LLAMA_MODEL_PATH=path_to_llama_weights  # If using Llama 2
@@ -65,7 +64,7 @@ DATABASE_URL=sqlite:///database/hotel_bookings.db
 `**
 ⚠️ Make sure the Gemini API key is for text generation only!
 
-6️⃣ Run the Application
+###6️⃣ Run the Application
 
 **`python .\app.py`**
 or
