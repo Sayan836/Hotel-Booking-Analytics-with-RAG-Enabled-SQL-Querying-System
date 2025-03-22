@@ -21,6 +21,8 @@ Seamless JSON Responses: Ensures AI-generated answers are structured for fronten
 
 Data Visualization & Analytics: Generates key insights using Matplotlib & Seaborn.
 
+# For undertanding better about the api end points and tested examples, check the Test_Documents.pdf in th repository
+
 ### 🛠️ Tech Stack
 Backend: Flask, LangChain
 
@@ -36,27 +38,19 @@ Data Visualization: Matplotlib, Seaborn
 
 Frontend (Planned): React.js
 
-📌 Setup Instructions
+### 📌 Setup Instructions
 For Windows Users
 1️⃣ Clone the Repository
 
-sh
-Copy
-Edit
-git clone https://github.com/Sayan836/Hotel-Booking-Analytics-with-RAG-Enabled-SQL-Querying-System.git
-cd Hotel-Booking-Analytics-with-RAG-Enabled-SQL-Querying-System
+**`git clone https://github.com/Sayan836/Hotel-Booking-Analytics-with-RAG-Enabled-SQL-Querying-System.git`**
+**`cd Hotel-Booking-Analytics-with-RAG-Enabled-SQL-Querying-System`**
 2️⃣ Create a Virtual Environment
 
-sh
-Copy
-Edit
-virtualenv env
+**`virtualenv env`**
 3️⃣ Activate the Virtual Environment
 
-sh
-Copy
-Edit
-.\env\Scripts\activate.ps1
+**`.\env\Scripts\activate.ps1`**
+
 ### 4️⃣ Install Required Dependencies
 
 **`pip install -r requirements.txt`**
@@ -78,3 +72,5 @@ or
 **`python3 .\app.py`**
 
 ⚠️ Note: You must have Python 3.10+ installed to run the files.
+
+
