@@ -5,6 +5,8 @@ This project is an advanced Retrieval-Augmented Generation (RAG) based Hotel Boo
 # 🚀 Features
 Natural Language to SQL: Users can ask queries in English, and the system translates them into SQL.
 
+Data Visualization & Analytics: Generates key insights using Matplotlib & Seaborn.
+
 RAG-Powered Insights: Combines retrieved database information with context-aware generative AI responses.
 
 Flask API Backend: Manages query processing and response generation.
@@ -17,11 +19,11 @@ SQL Query Execution: Connects to a PostgreSQL/SQLite database and dynamically ex
 
 Vector Database Retrieval: Uses ChromaDB for efficient information retrieval.
 
+Chat History feature added in the system for better conversational session.
+
 Seamless JSON Responses: Ensures AI-generated answers are structured for frontend integration.
 
-Data Visualization & Analytics: Generates key insights using Matplotlib & Seaborn.
-
-## For undertanding better about the api end points and tested examples, check the Test_Documents.pdf in th repository
+## For undertanding better about the api end points and tested examples, check the Documentation.pdf in th repository
 
 # 🛠️ Tech Stack
 Backend: Flask, LangChain
