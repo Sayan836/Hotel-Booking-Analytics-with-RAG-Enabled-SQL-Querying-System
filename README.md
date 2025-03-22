@@ -36,7 +36,7 @@ Embedding & Retrieval: ChromaDB
 
 Data Visualization: Matplotlib, Seaborn
 
-Frontend (Planned): React.js
+Frontend : Simple HTML and JavaScript (index.html)
 
 # 📌 Setup Instructions
 For Windows Users
@@ -72,5 +72,6 @@ or
 **`python3 .\app.py`**
 
 ⚠️ Note: You must have Python 3.10+ installed to run the files.
+## In the end, you can open the localhost webpage and can interact with bot through api calls
 
 
