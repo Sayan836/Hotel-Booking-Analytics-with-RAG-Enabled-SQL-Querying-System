@@ -75,7 +75,7 @@
     <script>
         async function fetchAnalytics() {
             try {
-                const response = await fetch("https://d5fb-34-125-183-146.ngrok-free.app/result_analytics");
+                const response = await fetch("http://127.0.0.1:8000/result_analytics");
                 const data = await response.json();
                 const container = document.getElementById("analyticsContainer");
                 container.innerHTML = "";
@@ -109,10 +109,10 @@
             document.getElementById("chatInput").value = "";
 
             try {
-                const response = await fetch("https://d5fb-34-125-183-146.ngrok-free.app/ask", {
+                const response = await fetch("http://127.0.0.1:8000/ask", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ "text":question })
+                    body: JSON.stringify({ "query":question })
                 });
                 const data = await response.json();
                 chatHistory.innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;

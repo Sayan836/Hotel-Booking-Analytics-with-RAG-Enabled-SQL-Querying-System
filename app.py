@@ -75,9 +75,7 @@ def chat():
       sql_results= str(sql_results)
     
     print(sql_results, type(sql_results))
-    if not isinstance(session["rag_chain"], str):
-      print(f"Invalid input type: {type(session['rag_chain'])}")
-
+    
     # Combine user query with SQL results & document retriever context
     payload= f"""
       SQL Query Results: {sql_results}
@@ -89,9 +87,7 @@ def chat():
     #response_text = response.split("<|assistant|>")[-1].strip()
 
     # Update chat history
-    session["chat_history"].append((query, response_text))
-    print("Response:", response_text.content)
-    print(type(response_text))
+    session["chat_history"].append({"User": query, "Bot": response_text.content})
 
     return jsonify({"query": query, "response": response_text.content})
 
