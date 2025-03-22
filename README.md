@@ -21,7 +21,7 @@ Seamless JSON Responses: Ensures AI-generated answers are structured for fronten
 
 Data Visualization & Analytics: Generates key insights using Matplotlib & Seaborn.
 
-## For undertanding better about the api end points and tested examples, check the Test_Documents.pdf in th repository
+## For undertanding better about the api end points and tested examples, check the Documentation.pdf in th repository
 
 # 🛠️ Tech Stack
 Backend: Flask, LangChain
