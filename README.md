@@ -62,6 +62,7 @@ GEMINI_API_KEY=your_gemini_api_key  # Get this from Google Cloud Console
 LLAMA_MODEL_PATH=path_to_llama_weights  # If using Llama 2
 DATABASE_URL=sqlite:///database/hotel_bookings.db
 `**
+
 ⚠️ Make sure the Gemini API key is for text generation only!
 
 ###6️⃣ Run the Application
